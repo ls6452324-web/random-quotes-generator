@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization Tags -->
+    <title>Random Quote Generator | Daily Inspirational Quotes</title>
+    <meta name="description" content="Generate random inspirational, motivational, and famous quotes instantly. Find your daily dose of wisdom and share with friends.">
+    <meta name="keywords" content="random quote generator, motivational quotes, inspirational quotes, famous sayings, daily wisdom">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com">
+
+    <!-- Open Graph (Facebook / LinkedIn) SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:title" content="Random Quote Generator | Daily Inspirational Quotes">
+    <meta property="og:description" content="Generate random inspirational and motivational quotes instantly.">
+    <meta property="og:image" content="https://yourwebsite.comog-image.jpg">
+
+    <!-- Twitter SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Quote Generator">
+    <meta name="twitter:description" content="Generate random inspirational and motivational quotes instantly.">
+
+    <!-- Structured Data (Schema.org) for Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Random Quote Generator",
+      "url": "https://yourwebsite.com",
+      "description": "A web application that generates random inspirational and motivational quotes.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+
+    <!-- Google AdSense Auto Ads Hint (If using Auto Ads) -->
+    <!-- 
+    <script async src="https://googlesyndication.com" crossorigin="anonymous"></script> 
+    -->
+
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --primary-color: #4a90e2;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .quote-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .quote-author {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #357abd;
+        }
+        /* Ad Spaces Styling */
+        .ad-space {
+            background: #e9ecef;
+            border: 2px dashed #ced4da;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        .ad-top { width: 728px; height: 90px; max-width: 100%; }
+        .ad-bottom { width: 300px; height: 250px; max-width: 100%; }
+    </style>
+</head>
+<body>
+
+    <!-- AD SPACE 1: Top Leaderboard (Hint) -->
+    <div class="ad-space ad-top">
+        <!-- Google AdSense Code Injected Here -->
+        <!-- 
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"></ins>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> 
+        -->
+        ADVERTISEMENT (728x90)
+    </div>
+
+    <div class="container">
+        <h1>Random Quote Generator</h1>
+        
+        <div class="quote-card">
+            <div class="quote-text" id="quote">"The only way to do great work is to love what you do."</div>
+            <div class="quote-author" id="author">- Steve Jobs</div>
+            <button class="btn" id="new-quote-btn">New Quote</button>
+        </div>
+    </div>
+
+    <!-- AD SPACE 2: Bottom Rectangle (Hint) -->
+    <div class="ad-space ad-bottom">
+        <!-- Google AdSense Code Injected Here -->
+        <!-- 
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:300px;height:250px"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"></ins>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> 
+        -->
+        ADVERTISEMENT (300x250)
+    </div>
+
+    <script>
+        // Local Quotes Array (Aap isme mazeed quotes add kar sakte hain)
+        const quotes = [
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+            { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+            { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+            { text: "Do not watch the clock; do what it does. Keep going.", author: "Sam Levenson" }
+        ];
+
+        const quoteText = document.getElementById('quote');
+        const quoteAuthor = document.getElementById('author');
+        const newQuoteBtn = document.getElementById('new-quote-btn');
+
+        function generateQuote() {
+            // Random index select karne ke liye
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const selectedQuote = quotes[randomIndex];
+            
+            // DOM update karne ke liye
+            quoteText.innerText = `"${selectedQuote.text}"`;
+            quoteAuthor.innerText = `- ${selectedQuote.author}`;
+        }
+
+        // Button Click Event Listener
+        newQuoteBtn.addEventListener('click', generateQuote);
+    </script>
+</body>
+</html>
